@@ -1,5 +1,5 @@
 import "../Button/button.css"
-import noProjectImg from '../../assets/no-project.png'
+import noProjectImg from '../../assets/no-projects.png'
 import Button from "../Button/Button.tsx";
 
 export default function NoProjectSelected() {

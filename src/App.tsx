@@ -1,11 +1,11 @@
 import ProjectsSidebar from "./components/ProjectsSidebar/ProjectsSidebar.tsx";
-import NewProject from "./components/NewProject/NewProject.tsx";
+import NoProjectSelected from "./components/NoProjectSelected/NoProjectSelected.tsx";
 
 function App() {
   return (
     <main className="h-screen my-8 flex gap-8">
         <ProjectsSidebar />
-        <NewProject />
+        <NoProjectSelected />
     </main>
   )
 }
