@@ -1,0 +1,39 @@
+.button-primary {
+    @apply
+    px-4
+    py-2
+    text-xs
+    md:text-base
+    rounded-md
+    bg-stone-700
+    text-stone-400
+    hover:bg-stone-600
+    hover:text-stone-100
+    transition-all
+    duration-200
+}
+
+.button-secondary{
+    @apply
+    px-6
+    py-2
+    rounded-md
+    bg-stone-800
+    text-stone-50
+    hover:bg-stone-950
+    dark:bg-stone-400
+    dark:text-stone-100
+    dark:hover:bg-stone-200
+    dark:hover:text-stone-400
+    transition-all duration-200
+}
+
+.button-alternative {
+    @apply
+    text-stone-800
+    hover:text-stone-950
+    dark:text-stone-400
+    dark:hover:text-stone-200
+    transition-all
+    duration-200
+}
