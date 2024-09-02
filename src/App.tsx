@@ -1,10 +1,12 @@
-import './App.css'
+import ProjectsSidebar from "./components/ProjectsSidebar/ProjectsSidebar.tsx";
+import NewProject from "./components/NewProject/NewProject.tsx";
 
 function App() {
   return (
-    <>
-        <h1 className="text-3xl font-bold">Hello world</h1>
-    </>
+    <main className="h-screen my-8 flex gap-8">
+        <ProjectsSidebar />
+        <NewProject />
+    </main>
   )
 }
 
