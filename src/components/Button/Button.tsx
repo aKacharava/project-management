@@ -1,5 +1,6 @@
 import {ButtonProps} from "../../interfaces/components/Button.ts";
 import {ButtonType} from "../../enums/components/Button.ts";
+import {ComponentPropsWithoutRef} from "react";
 
 const buttonTypeMap: Record<ButtonType, string> = {
     [ButtonType.Primary]: "button-primary",
@@ -14,13 +15,14 @@ function determineButtonType(type: ButtonType = ButtonType.Primary) {
 export default function Button(
     {
         label,
-        buttonType
+        buttonType,
+        ...props
     }: ButtonProps
 ) {
     const className = determineButtonType(buttonType)
 
     return (
-        <button className={className}>
+        <button className={className} {...props as ComponentPropsWithoutRef<"button">}>
             {label}
         </button>
     )
