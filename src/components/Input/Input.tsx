@@ -1,5 +1,6 @@
-import {ComponentPropsWithoutRef} from "react";
-import {InputLabelProps} from "../../types/components/Input.ts";
+import './input.css'
+import {ComponentPropsWithoutRef} from "react"
+import {InputLabelProps} from "../../types/components/Input.ts"
 
 export default function Input(
     {
@@ -9,9 +10,13 @@ export default function Input(
     }: InputLabelProps
 ) {
     return(
-        <p>
-            <label>{label}</label>
-            {textarea ? <textarea {...props as ComponentPropsWithoutRef<"textarea">}></textarea> : <input {...props as ComponentPropsWithoutRef<"input">} />}
+        <p className="flex flex-col gap-1 my-4">
+            <label className="text-sm font-bold uppercase text-stone-500">{label}</label>
+            {
+                textarea ?
+                    <textarea className="input" {...props as ComponentPropsWithoutRef<"textarea">}></textarea> :
+                    <input className="input" {...props as ComponentPropsWithoutRef<"input">} />
+            }
         </p>
     )
 }
