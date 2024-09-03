@@ -3,6 +3,7 @@ import NoProjectSelected from "./components/NoProjectSelected/NoProjectSelected.
 import {useState} from "react";
 import NewProject from "./components/NewProject/NewProject.tsx";
 import {ProjectsState} from "./types/global.ts";
+import {Project} from "./interfaces/global.ts";
 
 const initialProjectState: ProjectsState = {
     selectedProjectId: undefined,
@@ -21,10 +22,25 @@ function App() {
         })
     }
 
+    function handleAddProject(projectData: Project) {
+        setProjectsState(prevState => {
+            return {
+                ...prevState,
+                projects: [
+                    ...prevState.projects,
+                    {
+                        ...projectData,
+                        id: Math.random()
+                    }
+                ]
+            }
+        })
+    }
+
     let content;
 
     if (projectsState.selectedProjectId === null) {
-        content = <NewProject />
+        content = <NewProject onAdd={handleAddProject} />
     } else if(projectsState.selectedProjectId === undefined) {
         content = <NoProjectSelected onStartAddProject={handleStartAddProject} />
     }

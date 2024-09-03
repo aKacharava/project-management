@@ -15,7 +15,6 @@ export default function ProjectsSidebar(
                 <Button label="+ Add new Project" onClick={onStartAddProject} />
             </div>
             <ul>
-                <li>Some Project</li>
             </ul>
         </aside>
     )
