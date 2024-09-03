@@ -25,7 +25,8 @@
     dark:text-stone-100
     dark:hover:bg-stone-200
     dark:hover:text-stone-400
-    transition-all duration-200
+    transition-all
+    duration-200
 }
 
 .button-alternative {
@@ -34,6 +35,21 @@
     hover:text-stone-950
     dark:text-stone-400
     dark:hover:text-stone-200
+    transition-all
+    duration-200
+}
+
+.button-project-sidebar-item {
+    @apply
+    w-full
+    text-left
+    px-2
+    py-1
+    rounded-sm
+    my-1
+    text-stone-400
+    hover:text-stone-200
+    hover:bg-stone-800
     transition-all
     duration-200
 }

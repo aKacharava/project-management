@@ -5,6 +5,7 @@ const buttonTypeMap: Record<ButtonType, string> = {
     [ButtonType.Primary]: "button-primary",
     [ButtonType.Secondary]: "button-secondary",
     [ButtonType.Alternative]: "button-alternative",
+    [ButtonType.ProjectSidebarItem]: "button-project-sidebar-item",
 }
 
 function determineButtonType(type: ButtonType = ButtonType.Primary) {

@@ -1,5 +1,11 @@
 export interface Project {
-    title: string|undefined;
-    description: string|undefined;
-    dueDate: string|undefined;
+    id: number;
+    title: string;
+    description: string;
+    dueDate: string;
+}
+
+export interface ProjectsSidebarItem {
+    projects: Project[]
+    onStartAddProject: () => void
 }
