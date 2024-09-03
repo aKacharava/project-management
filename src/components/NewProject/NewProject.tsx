@@ -5,13 +5,13 @@ import {useRef} from "react";
 import {Project} from "../../interfaces/global.ts";
 import {Modal} from "../Modal/Modal.tsx";
 import {ModalHandle} from "../../interfaces/components/Modal.ts";
+import {NewProjectProps} from "../../interfaces/components/NewProject.ts";
 
 export default function NewProject(
     {
-        onAdd
-    }: {
-        onAdd: (project: Project) => void
-    }
+        onAdd,
+        onCancel
+    }: NewProjectProps
 ) {
     const title = useRef<HTMLInputElement>(null);
     const description = useRef<HTMLTextAreaElement>(null);
@@ -45,14 +45,14 @@ export default function NewProject(
     return(
         <>
             <Modal ref={modal} buttonCaption="Okay">
-                <h2>Invalid input</h2>
-                <p>It seems you forgot to enter a value.</p>
-                <p>Please enter a value.</p>
+                <h2 className="text-xl font-bold text-stone-500 dark:text-stone-300 my-4">Invalid input</h2>
+                <p className="text-stone-400 dark:text-stone-500 mb-4">It seems you forgot to enter a value.</p>
+                <p className="text-stone-400 dark:text-stone-500 mb-4">Please enter a value.</p>
             </Modal>
             <div className="w-[35rem] mt-16">
                 <menu className="flex items-center justify-end gap-4 my-4">
                     <li>
-                        <Button label="Cancel" buttonType={ButtonType.Alternative} />
+                        <Button label="Cancel" buttonType={ButtonType.Alternative} onClick={onCancel} />
                     </li>
                     <li>
                         <Button label="Save" buttonType={ButtonType.Secondary} onClick={handleSave} />
