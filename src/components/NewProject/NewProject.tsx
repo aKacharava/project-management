@@ -17,6 +17,7 @@ export default function NewProject(
 
     function handleSave() {
         const project: Project = {
+            id: Math.random(),
             title: title.current?.value,
             description: description.current?.value,
             dueDate: dueDate.current?.value
@@ -24,7 +25,6 @@ export default function NewProject(
 
         onAdd(project)
     }
-
 
     return(
         <div className="w-[35rem] mt-16">

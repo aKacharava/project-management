@@ -31,7 +31,6 @@ function App() {
                     ...prevState.projects,
                     {
                         ...projectData,
-                        id: Math.random()
                     }
                 ]
             }

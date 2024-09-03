@@ -1,8 +1,8 @@
 export interface Project {
     id: number;
-    title: string;
-    description: string;
-    dueDate: string;
+    title?: string;
+    description?: string;
+    dueDate?: string;
 }
 
 export interface ProjectsSidebarItem {
