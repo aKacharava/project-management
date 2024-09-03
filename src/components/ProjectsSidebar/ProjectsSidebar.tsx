@@ -6,7 +6,9 @@ import {ButtonType} from "../../enums/components/Button.ts";
 export default function ProjectsSidebar(
     {
         projects,
-        onStartAddProject
+        onStartAddProject,
+        onSelectProject,
+        selectedProjectId
     }: ProjectsSidebarItem
 ) {
     return (
@@ -18,9 +20,20 @@ export default function ProjectsSidebar(
             <ul>
                 {
                     projects.map((project) => {
+                        let highlighted = '';
+
+                        if(project.id === selectedProjectId) {
+                            highlighted = "bg-pink-700"
+                        }
+
                         return (
                             <li key={project.id} className="my-4">
-                                <Button label={project.title} buttonType={ButtonType.ProjectSidebarItem} />
+                                <Button
+                                    label={project.title}
+                                    buttonType={ButtonType.ProjectSidebarItem}
+                                    onClick={() => project.id !== undefined && onSelectProject(project.id)}
+                                    className={highlighted}
+                                />
                             </li>
                         )
                     })

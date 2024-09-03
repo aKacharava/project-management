@@ -1,5 +1,5 @@
 export interface Project {
-    id: number;
+    id?: number;
     title?: string;
     description?: string;
     dueDate?: string;
@@ -8,4 +8,6 @@ export interface Project {
 export interface ProjectsSidebarItem {
     projects: Project[]
     onStartAddProject: () => void
+    onSelectProject: (projectId: number) => void
+    selectedProjectId: number|undefined
 }
