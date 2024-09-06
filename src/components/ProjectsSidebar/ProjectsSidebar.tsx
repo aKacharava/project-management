@@ -20,10 +20,10 @@ export default function ProjectsSidebar(
             <ul>
                 {
                     projects.map((project) => {
-                        let highlighted = '';
+                        let highlighted = "px-2 py-1 rounded-md w-full hover:bg-pink-950 transition-all duration-200"
 
                         if(project.id === selectedProjectId) {
-                            highlighted = "bg-pink-700"
+                            highlighted += " bg-pink-700"
                         }
 
                         return (
